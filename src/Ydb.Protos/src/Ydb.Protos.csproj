@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Ydb.Protos</AssemblyName>
+    <RootNamespace>Ydb.Protos</RootNamespace>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/ydb-platform/ydb-dotnet-genproto</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ydb-platform/ydb-dotnet-genproto</PackageProjectUrl>
+    <PackageId>Ydb.Protos</PackageId>
+    <Description>Codegen for YDB API protos.</Description>
+    <Company>YANDEX LLC</Company>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="../../../ydb-api-protos/protos/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../../ydb-api-protos/protos/validation/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../../ydb-api-protos/*.proto" GrpcServices="Client" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.18.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.39.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.40.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
