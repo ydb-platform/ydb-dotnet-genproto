@@ -14,6 +14,7 @@
     <PackageId>Ydb.Protos</PackageId>
     <Description>Codegen for YDB API protos.</Description>
     <Company>YANDEX LLC</Company>
+    <Authors>YDB</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
