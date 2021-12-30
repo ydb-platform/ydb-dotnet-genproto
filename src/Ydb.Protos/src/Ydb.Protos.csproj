@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
     <AssemblyName>Ydb.Protos</AssemblyName>
     <RootNamespace>Ydb.Protos</RootNamespace>
     <Nullable>enable</Nullable>
@@ -18,6 +18,10 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
+  <PropertyGroup Condition="$(TargetFramework.Equals('net6.0'))">
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
   <ItemGroup>
     <Protobuf Include="../../../ydb-api-protos/protos/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
     <Protobuf Include="../../../ydb-api-protos/protos/validation/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
@@ -25,9 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.18.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.39.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.40.0">
+    <PackageReference Include="Google.Protobuf" Version="3.19.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.41.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.42.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
