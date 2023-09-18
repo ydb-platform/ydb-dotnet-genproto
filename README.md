@@ -3,3 +3,19 @@
 # .NET Codegen for YDB gRPC API
 
 Generated .NET code for YDB gRPC API protobufs, including both service and message definitions.
+
+# Installation
+
+```bash
+dotnet add package Ydb.Sdk
+```
+
+# Instruction
+
+To run codegen launch bash script
+
+``` bash
+/bin/bash ./run.sh
+```
+
+For publishing package to nuget simply run `publish` workflow or ask the maintainer

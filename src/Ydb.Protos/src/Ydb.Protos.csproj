@@ -16,6 +16,7 @@
     <Company>YANDEX LLC</Company>
     <Authors>YDB</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
