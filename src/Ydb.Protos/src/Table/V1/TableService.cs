@@ -40,6 +40,8 @@ public static partial class TableService
 
     public static Grpc.Core.Method<Table.ReadTableRequest, Table.ReadTableResponse> StreamReadTableMethod => __Method_StreamReadTable;
 
+    public static Grpc.Core.Method<Table.ReadRowsRequest, Table.ReadRowsResponse> ReadRowsMethod => __Method_ReadRows;
+
     public static Grpc.Core.Method<Table.BulkUpsertRequest, Table.BulkUpsertResponse> BulkUpsertMethod => __Method_BulkUpsert;
 
     public static Grpc.Core.Method<Table.ExecuteScanQueryRequest, Table.ExecuteScanQueryPartialResponse> StreamExecuteScanQueryMethod => __Method_StreamExecuteScanQuery;
