@@ -12,7 +12,7 @@ dotnet add package Ydb.Sdk
 
 # Instruction
 
-To run codegen launch bash script
+To run codegen launch bash script or run `codegen` workflow
 
 ``` bash
 /bin/bash ./run.sh
