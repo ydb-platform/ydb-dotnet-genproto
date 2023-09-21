@@ -1,5 +1,13 @@
 name: codegen
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      checkout:
+        description: 'Branch or commit of ydb-api-protos'
+        required: true
+        default: 'master'
+        type: string
+        
 
 permissions:
   contents: write
@@ -23,6 +31,9 @@ jobs:
         run: |
           git pull --recurse-submodules
           git submodule update --remote --recursive
+          cd ydb-api-protos
+          git checkout ${{ inputs.checkout }}
+          cd ..
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
