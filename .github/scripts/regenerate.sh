@@ -1,4 +1,4 @@
 #!/bin/bash
-find .  -name "*.cs" -type f -delete # remove all old files
+find src/Ydb.Protos/src  -name "*.cs" -type f -delete # remove all old files
 
-python codegen.py # generate new
+dotnet run --project src/Ydb.Protos/Codegen/Codegen.csproj ydb-api-protos src/Ydb.Protos/src # generate new
