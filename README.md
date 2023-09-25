@@ -15,7 +15,8 @@ dotnet add package Ydb.Sdk
 To run codegen launch bash script or run `codegen` workflow
 
 ``` bash
-/bin/bash ./run.sh
+/bin/bash ./.github/scripts/regenerate.sh
 ```
 
 For publishing package to nuget simply run `publish` workflow or ask the maintainer
+
