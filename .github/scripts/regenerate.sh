@@ -1,4 +1,11 @@
 #!/bin/bash
-find src/Ydb.Protos/src  -name "*.cs" -type f -delete # remove all old files
+set -euxo pipefail
 
-dotnet run --project src/Ydb.Protos/Codegen/Codegen.csproj ydb-api-protos src/Ydb.Protos/src # generate new
+SOURCE_DIR=src/Ydb.Protos
+PROTO_DIR=ydb-api-protos
+CODEGEN_CSPROJ=src/Codegen/Codegen.csproj
+
+find $SOURCE_DIR  -name "*.cs" -type f -delete # remove all old files
+
+dotnet run --project src/Codegen/Codegen.csproj $PROTO_DIR $SOURCE_DIR # generate new
+

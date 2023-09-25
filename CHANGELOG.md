@@ -1,4 +1,4 @@
-- Added python script to generate methods in C# from protobufs
+- Added c# program to generate public methods in C# from protobufs
 - Update dotnet SDK version, now supported 6.0 and 7.0
 - Added nuget publish workflow
 - Added codegen workflow with automatic creation of Pull Request
