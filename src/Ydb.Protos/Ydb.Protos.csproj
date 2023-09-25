@@ -5,6 +5,8 @@
     <AssemblyName>Ydb.Protos</AssemblyName>
     <RootNamespace>Ydb</RootNamespace>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -16,13 +18,12 @@
     <Company>YANDEX LLC</Company>
     <Authors>YDB</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="../../../ydb-api-protos/protos/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
-    <Protobuf Include="../../../ydb-api-protos/protos/validation/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
-    <Protobuf Include="../../../ydb-api-protos/*.proto" GrpcServices="Client" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../ydb-api-protos/protos/*.proto" GrpcServices="None" ProtoRoot="../../ydb-api-protos/" AdditionalImportDirs="../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../ydb-api-protos/protos/annotations/*.proto" GrpcServices="None" ProtoRoot="../../ydb-api-protos/" AdditionalImportDirs="../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../ydb-api-protos/*.proto" GrpcServices="Client" ProtoRoot="../../ydb-api-protos/" AdditionalImportDirs="../../ydb-api-protos/protos/" />
   </ItemGroup>
 
   <ItemGroup>
