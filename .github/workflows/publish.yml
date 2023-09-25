@@ -24,7 +24,7 @@ jobs:
     env:
       VERSION_CHANGE: ${{ github.event.inputs.version-change }}
       RELEASE_CANDIDATE: ${{ github.event.inputs.release-candidate }}
-      VERSION_FILE: src/Ydb.Protos/src/Ydb.Protos.csproj
+      VERSION_FILE: src/Ydb.Protos/Ydb.Protos.csproj
       CHANGELOG_FILE: CHANGELOG.md
       GITHUB_TOKEN: ${{ secrets.YDB_PLATFORM_BOT_TOKEN_REPO }}
       NUGET_TOKEN: ${{ secrets.YDB_PLATFORM_NUGET_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
             7.0.x
       - name: Build
         run: |
-          cd src
+          cd src/Ydb.Protos
           dotnet build --configuration Release
       - name: Publish
         run: bash .github/scripts/publish.sh
