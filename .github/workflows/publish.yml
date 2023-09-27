@@ -34,6 +34,7 @@ jobs:
         with:
           token: ${{ secrets.YDB_PLATFORM_BOT_TOKEN_REPO }}
           fetch-depth: 0
+          submodules: 'true'
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
