@@ -1,10 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <AssemblyName>Ydb.Protos</AssemblyName>
-    <RootNamespace>Ydb.Protos</RootNamespace>
+    <RootNamespace>Ydb</RootNamespace>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -19,9 +21,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="../../../ydb-api-protos/protos/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
-    <Protobuf Include="../../../ydb-api-protos/protos/validation/*.proto" GrpcServices="None" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
-    <Protobuf Include="../../../ydb-api-protos/*.proto" GrpcServices="Client" ProtoRoot="../../../ydb-api-protos/" AdditionalImportDirs="../../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../ydb-api-protos/protos/*.proto" GrpcServices="None" ProtoRoot="../../ydb-api-protos/" AdditionalImportDirs="../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../ydb-api-protos/protos/annotations/*.proto" GrpcServices="None" ProtoRoot="../../ydb-api-protos/" AdditionalImportDirs="../../ydb-api-protos/protos/" />
+    <Protobuf Include="../../ydb-api-protos/*.proto" GrpcServices="Client" ProtoRoot="../../ydb-api-protos/" AdditionalImportDirs="../../ydb-api-protos/protos/" />
   </ItemGroup>
 
   <ItemGroup>
