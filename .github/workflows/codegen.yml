@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
           submodules: 'true'
       - name: Set env
-        run: echo "today=$(date +%Y%m%d_%H%m)" >> $GITHUB_ENV
+        run: echo "today=$(date +%Y%m%d_%H%m%S)" >> $GITHUB_ENV
       - name: Git Submodule Update
         run: |
           git pull --recurse-submodules
