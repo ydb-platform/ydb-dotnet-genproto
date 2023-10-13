@@ -11,7 +11,8 @@ rootCommand.AddArgument(protoDirArgument);
 rootCommand.AddArgument(outputDirArgument);
 rootCommand.SetHandler(Codegen, protoDirArgument, outputDirArgument);
 
-rootCommand.InvokeAsync(args);
+await rootCommand.InvokeAsync(args);
+
 void Codegen(string protoDir, string outDir)
 {
     const string rpcMethodPattern =
@@ -47,7 +48,13 @@ void Codegen(string protoDir, string outDir)
         }
 
         sb.Append('}');
-        var savePath = $"{outDir}/{serviceName}/V1/{serviceName}Service.cs";
+        var saveDir = $"{outDir}/{serviceName}/V1";
+        var savePath = $"{saveDir}/{serviceName}Service.cs";
+        if (!Directory.Exists(saveDir))
+        {
+            Directory.CreateDirectory(saveDir);
+        }
+
         File.WriteAllText(savePath, sb.ToString());
     }
 
