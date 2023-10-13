@@ -8,9 +8,6 @@ public static partial class TopicService
     public static Grpc.Core.Method<StreamReadMessage.Types.FromClient, StreamReadMessage.Types.FromServer> StreamReadMethod
         => __Method_StreamRead;
 
-    public static Grpc.Core.Method<CommitOffsetRequest, CommitOffsetResponse> CommitOffsetMethod
-        => __Method_CommitOffset;
-
     public static Grpc.Core.Method<CreateTopicRequest, CreateTopicResponse> CreateTopicMethod
         => __Method_CreateTopic;
 
