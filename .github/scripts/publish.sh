@@ -31,6 +31,7 @@ then
   RC=$(git tag | grep "v$MAJOR.$MINOR.$PATCH-rc" | wc -l);
   TAG="v$MAJOR.$MINOR.$PATCH-rc$RC";
 else
+  VERSION="$MAJOR.$MINOR.$PATCH"
   sed -e "s/<Version>[0-9.]*<\/Version>/<Version>$VERSION<\/Version>/g" -i "$VERSION_FILE"
   git add "$VERSION_FILE";
   echo "## v$MAJOR.$MINOR.$PATCH" >> "$CHANGELOG_FILE".tmp
