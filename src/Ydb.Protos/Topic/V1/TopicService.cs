@@ -11,6 +11,9 @@ public static partial class TopicService
     public static Grpc.Core.Method<CommitOffsetRequest, CommitOffsetResponse> CommitOffsetMethod
         => __Method_CommitOffset;
 
+    public static Grpc.Core.Method<UpdateOffsetsInTransactionRequest, UpdateOffsetsInTransactionResponse> UpdateOffsetsInTransactionMethod
+        => __Method_UpdateOffsetsInTransaction;
+
     public static Grpc.Core.Method<CreateTopicRequest, CreateTopicResponse> CreateTopicMethod
         => __Method_CreateTopic;
 
