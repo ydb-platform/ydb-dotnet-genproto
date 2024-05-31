@@ -1,3 +1,4 @@
+## v1.0.6
 - Updated grpc methods: Query Service
 
 ## v1.0.5
