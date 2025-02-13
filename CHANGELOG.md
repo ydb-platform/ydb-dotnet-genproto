@@ -1,3 +1,4 @@
+## v1.1.1
 - Added dotnet build -c Release
 
 ## v1.1.0
