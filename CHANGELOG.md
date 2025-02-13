@@ -1,3 +1,5 @@
+- Added dotnet build -c Release
+
 ## v1.1.0
 - Updated version of the library Grpc.Net.Client to 2.67.0
 
