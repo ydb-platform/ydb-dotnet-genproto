@@ -54,6 +54,7 @@ then
 else
   VERSION=$MAJOR.$MINOR.$PATCH
   cd src/Ydb.Protos
+  dotnet build -c Release
   dotnet pack -c Release -o out /p:Version="$VERSION"
   gh release create "$TAG" -t "$TAG" --notes "$CHANGELOG"
   dotnet nuget push out/Ydb.Protos."$VERSION".nupkg \
