@@ -1,3 +1,5 @@
+- Updated YDB Grpc API
+
 ## v1.1.1
 - Added dotnet build -c Release
 
