@@ -1,3 +1,4 @@
+## v1.2.0
 - Updated YDB Grpc API
 
 ## v1.1.3
