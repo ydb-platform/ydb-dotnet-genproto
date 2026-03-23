@@ -67,4 +67,13 @@ public static partial class TableService
 
     public static Grpc.Core.Method<Table.ExecuteScanQueryRequest, Table.ExecuteScanQueryPartialResponse> StreamExecuteScanQueryMethod
         => __Method_StreamExecuteScanQuery;
+
+    public static Grpc.Core.Method<Table.DescribeExternalDataSourceRequest, Table.DescribeExternalDataSourceResponse> DescribeExternalDataSourceMethod
+        => __Method_DescribeExternalDataSource;
+
+    public static Grpc.Core.Method<Table.DescribeExternalTableRequest, Table.DescribeExternalTableResponse> DescribeExternalTableMethod
+        => __Method_DescribeExternalTable;
+
+    public static Grpc.Core.Method<Table.DescribeSystemViewRequest, Table.DescribeSystemViewResponse> DescribeSystemViewMethod
+        => __Method_DescribeSystemView;
 }
