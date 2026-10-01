@@ -1,0 +1,64 @@
+name: publish existing tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag (for example v1.3.0)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  nuget:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate tag
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Expected an existing stable release tag such as v1.3.0" >&2
+            exit 1
+          fi
+
+      - name: Checkout tag and protos
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.tag }}
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+
+      - name: Pack
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          version="${TAG#v}"
+          dotnet pack src/Ydb.Protos/Ydb.Protos.csproj \
+            --configuration Release \
+            --output "$RUNNER_TEMP/ydb-protos" \
+            /p:Version="$version"
+
+      - name: Push package to NuGet
+        env:
+          TAG: ${{ inputs.tag }}
+          NUGET_TOKEN: ${{ secrets.YDB_PLATFORM_NUGET_TOKEN }}
+        run: |
+          if [[ -z "$NUGET_TOKEN" ]]; then
+            echo "YDB_PLATFORM_NUGET_TOKEN is not configured" >&2
+            exit 1
+          fi
+          version="${TAG#v}"
+          dotnet nuget push "$RUNNER_TEMP/ydb-protos/Ydb.Protos.$version.nupkg" \
+            --skip-duplicate \
+            --api-key "$NUGET_TOKEN" \
+            --source https://api.nuget.org/v3/index.json
