@@ -1,4 +1,3 @@
-## v1.3.0
 - Updated YDB API protos with StrictSerializableRW and commit timestamps.
 
 ## v1.2.0
