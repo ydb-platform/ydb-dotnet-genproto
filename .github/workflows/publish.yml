@@ -15,15 +15,11 @@ on:
        type: boolean                                                                                                                                                                                                                 
        default: True                                                                                                                                                                                                                 
                                                                                                                                                                                                                                      
-permissions:                                                                                                                                                                                                                          
- contents: write                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                     
-jobs:                                                                                                                                                                                                                                 
+jobs:
  publish:                                                                                                                                                                                                                            
    runs-on: ubuntu-latest                                                                                                                                                                                                            
    permissions:                                                                                                                                                                                                                      
-     contents: write                                                                                                                                                                                                                 
-     id-token: write                                                                                                                                                                                                                 
+     id-token: write
    env:                                                                                                                                                                                                                              
      VERSION_CHANGE: ${{ github.event.inputs.version-change }}                                                                                                                                                                       
      RELEASE_CANDIDATE: ${{ github.event.inputs.release-candidate }}                                                                                                                                                                 
@@ -51,7 +47,7 @@ jobs:
          dotnet build --configuration Release                                                                                                                                                                                        
                                                                                                                                                                                                                                      
      - name: NuGet login                                                                                                                                                                                                             
-       uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0                                                                                                                                                           
+       uses: NuGet/login@v1
        id: nuget-login                                                                                                                                                                                                               
        with:                                                                                                                                                                                                                         
          user: robot-ydb-platform
