@@ -1,4 +1,3 @@
-## v1.5.0
 - Updated YDB Query API protos with affected-row collection and statistics.
 
 ## v1.4.0
